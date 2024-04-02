@@ -1,0 +1,791 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background: black;
+    color: whitesmoke;
+}
+header{
+    display: flex;
+    justify-content: center;
+}
+
+.Logo, .Top_menu{
+    margin-right: 60px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.Top_menu li{
+    margin-right: 60px;
+    display: inline-block;
+    vertical-align: middle;
+
+    
+}
+.Top_menu a{
+    vertical-align: middle;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    font-size: 15px;
+    color: whitesmoke;
+}
+
+.Top_menu a:hover{
+    color: rosybrown;
+}
+
+
+
+
+p{
+    text-align: center;
+}
+
+.text{
+    position: relative;
+    z-index: 2;
+}
+
+/*.content_item-title{
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+}*/
+
+.content_item{
+    max-width: 600px; /* если чтто тут менять или на 600 или на 1100*/
+}
+
+.content_item-texts{
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.content_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content_item{
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.content_item::before{
+    content: '';
+    width: 100px;
+    height: 1000px;
+    background: rosybrown;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: border 6s linear infinite;
+}
+
+@keyframes border{
+    0%{
+    transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%{
+    transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.content_item::after{
+    content: '';
+    width: 99%;
+    height: 98%;
+    background:black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+}
+
+
+.png{
+    height: 400px ;
+    width: 600px ;
+    padding-left: 15%;
+    padding-top: 1%;
+}
+
+.content{
+    padding-left: 40%;
+}
+
+.kadr{
+    text-align: center;
+}
+
+/*Карусель с кадрами*/
+.wrapper {
+    align-items: center;
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .container-oboi {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 400px;
+    justify-content: start;
+  }
+  
+  .cardn {
+    align-items: flex-end;
+    background-size: cover;
+    border-radius: .75rem;
+    border-radius: 2rem;
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+    cursor: pointer;
+    display: flex;
+    margin: 0 10px;
+    overflow: hidden;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    width: 80px;
+  }
+  
+  .cardn > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .cardn > .row > .icon {
+    align-items: center;
+    background:rosybrown;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    width: 50px;
+  }
+  
+  .cardn > .row > .description {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    justify-content: center;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(30px);
+    transition: all .3s ease;
+    transition-delay: .3s;
+    width: 520px;
+  }
+  
+  .description p {
+    color: #b0b0ba;
+    padding-top: 5px;
+  }
+  
+  .description h4 {
+    text-transform: uppercase;
+  }
+  
+  input {
+    display: none;
+  }
+  
+  input:checked + label {
+    width: 600px;
+  }
+  
+  input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  
+  .cardn[for="c1"] {
+    background-image: url('https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/e17a3384-fb62-4e31-b89f-4ab01151d9cc/1920x');
+  }
+  
+  .cardn[for="c2"] {
+    background-image: url('https://sun9-18.userapi.com/impg/mdKd8QU2Azb48WGHWt2AD2P0JB3DeSLHj1C9dA/zbacvVZsYjw.jpg?size=1200x800&quality=96&sign=b09c57916e8760684d3873b1f3c7b69a&c_uniq_tag=ttrsg3qD415zpSOi1uM-CDpBIyF4pBAovkNuA3_LUA8&type=album');
+  }
+  
+  .cardn[for="c3"] {
+    background-image: url('https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/d205fec2-e89f-436c-949d-20adb11db28a/1920x');
+  }
+  
+  .cardn[for="c4"] {
+    background-image: url('https://www.kino-teatr.ru/movie/kadr/141954/965636.jpg');
+  }
+  
+  .cardn[for="c5"] {
+    background-image: url('https://toppeoples.ru/wp-content/uploads/2021/01/%D1%84%D0%B8%D0%BB-%D0%B8%D0%B7-%D1%82%D1%80%D1%83%D0%B4%D0%BD%D1%8B%D1%85-%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D1%81%D1%82%D0%BA%D0%BE%D0%B2-%D0%92%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D0%B9-%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2.jpg');
+  }
+  .cardn[for="c6"] {
+    background-image: url('https://stuki-druki.com/serial/images/kadr-trudnie-podrostki-2-10.jpg');
+  }
+  .cardn[for="c7"] {
+    background-image: url('https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/c81108a7-d391-4098-a9ed-029ac0c177ea/3840x');
+  }
+  .cardn[for="c8"] {
+    background-image: url('https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/dd5dbeb7-bae9-47f2-ac9b-a6e4a50af300/1920x');
+  }
+  .cardn[for="c9"] {
+    background-image: url('https://2datyvyhoda.ru/wp-content/uploads/2020/10/Trudnye-podrostki-2-sezon.jpg');
+  }
+  .cardn[for="c10"] {
+    background-image: url('https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/115600e0-95e2-4867-9399-0f829531e221/1920x');
+  }
+  .cardn[for="c11"] {
+    background-image: url('https://lostpix.com/img/2021-10/07/aew28ajdr7ynkr02smyi9f3ca.jpg');
+  }
+
+
+/*Карточки*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+.container-leaf {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.container-leaf .card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    max-width: 100%;
+    height: 300px;
+    background: #FFF;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+}
+
+.container-leaf .card:hover {
+    height: 400px;
+}
+
+.container-leaf .card .img-box {
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container-leaf .card:hover .img-box {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.container-leaf .card .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-leaf .card .content {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container-leaf .card:hover .content {
+    top: 130px;
+    height: 250px;
+}
+
+.container-leaf .card .content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--clr);
+}
+
+.container-leaf .card .content p {
+    color: #333;
+}
+
+.container-leaf .card .content a {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    background: var(--clr);
+    color: #FFF;
+    font-weight: 500;
+}
+
+.container-leaf .card .content a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .container-leaf .card {
+        width: 230px;
+        border-radius: 15px;
+    }
+
+    .container-leaf .card .img-box {
+        width: 185px;
+        border-radius: 10px;
+    }
+
+    .container-leaf .card .content p {
+        font-size: 0.8rem;
+    }
+
+    .container-leaf .card .content a {
+        font-size: 0.9rem;
+    }
+}
+
+/*Карточки2*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+.container-leaf {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.container-leaf .card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    max-width: 100%;
+    height: 300px;
+    background: #FFF;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+}
+
+.container-leaf .card:hover {
+    height: 400px;
+}
+
+.container-leaf .card .img-box {
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container-leaf .card:hover .img-box {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.container-leaf .card .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-leaf .card .content {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container-leaf .card:hover .content {
+    top: 130px;
+    height: 250px;
+}
+
+.container-leaf .card .content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--clr);
+}
+
+.container-leaf .card .content p {
+    color: #333;
+}
+
+.container-leaf .card .content a {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    background: var(--clr);
+    color: #FFF;
+    font-weight: 500;
+}
+
+.container-leaf .card .content a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .container-leaf .card {
+        width: 230px;
+        border-radius: 15px;
+    }
+
+    .container-leaf .card .img-box {
+        width: 185px;
+        border-radius: 10px;
+    }
+
+    .container-leaf .card .content p {
+        font-size: 0.8rem;
+    }
+
+    .container-leaf .card .content a {
+        font-size: 0.9rem;
+    }
+}
+
+/*Карточки3*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+.container-leaf {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.container-leaf .card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    max-width: 100%;
+    height: 300px;
+    background: #FFF;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+}
+
+.container-leaf .card:hover {
+    height: 400px;
+}
+
+.container-leaf .card .img-box {
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container-leaf .card:hover .img-box {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.container-leaf .card .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-leaf .card .content {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container-leaf .card:hover .content {
+    top: 130px;
+    height: 250px;
+}
+
+.container-leaf .card .content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--clr);
+}
+
+.container-leaf .card .content p {
+    color: #333;
+}
+
+.container-leaf .card .content a {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    background: var(--clr);
+    color: #FFF;
+    font-weight: 500;
+}
+
+.container-leaf .card .content a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .container-leaf .card {
+        width: 230px;
+        border-radius: 15px;
+    }
+
+    .container-leaf .card .img-box {
+        width: 185px;
+        border-radius: 10px;
+    }
+
+    .container-leaf .card .content p {
+        font-size: 0.8rem;
+    }
+
+    .container-leaf .card .content a {
+        font-size: 0.9rem;
+    }
+}
+
+/*пространство внизу*/
+body {
+    padding-bottom: 100px;
+}
+
+.nametir{
+    margin-top: 200px;
+}
+
+
+/* первый сезон*/
+
+.sezo{
+    padding-left: 20%;
+    padding-top: 10px;
+}
+/* типа к тексту было
+.ParagSezon{
+    word-wrap: 450px;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 400px;
+    background: #a76f6f;
+    display: inline-block;
+
+    padding-left: 50%;
+    padding-bottom: 50px;
+    color: honeydew;
+}*/
+
+/*красивушка в сезонах*/
+.gradient-border {
+    --borderWidth: 3px;
+    background: #000000;
+    position: relative;
+    border-radius: var(--borderWidth);
+
+    max-width: 450px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    max-width: 450px;
+    padding-left: 25%;
+
+  }
+
+  .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%; 
+
+  }
+  
+  
+  @keyframes animatedgradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  
+
+
+.buttons {
+    padding-top: 20%;
+    display: flex;
+    flex-direction: row;
+        flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+  /*   padding: 2em 0em; */
+  }
+  
+  .container-knopka {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #000000;
+    padding:  40px 0px;
+    width: 240px;
+  }
+  
+  /*h1 {
+    text-align: left;
+    color: #d19d9d;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.4em;
+    font-size: 1em;
+  }*/
+  
+  p {
+    padding-left: 50px;
+    text-align: left;
+    color: #eee7e7;
+    letter-spacing: 0.05em;
+    font-size: 1em;
+    margin: 5 0 0em;
+  }
+  
+  
+  .btn {
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 160px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  .btn:hover {
+    text-decoration: none;
+  }
+  
+  /*btn_background*/
+  .effect01 {
+    color: #000000;
+    border: 4px solid  rosybrown;
+    box-shadow:0px 0px 0px 1px #cfcfcf inset;
+    background-color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  .effect01:hover {
+    border: 4px solid #252525be;
+    background-color: #ce9191;
+    box-shadow:0px 0px 0px 4px #b89fb293 inset;
+  }
+  
+  /*btn_text*/
+  .effect01 span {
+    transition: all 0.2s ease-out;
+    z-index: 2;
+  }
+  .effect01:hover span{
+    letter-spacing: 0.13em;
+    color: #ffffff;
+  }
+  
+  /*highlight*/
+  .effect01:after {
+    background: #d4b6b6;
+    border: 0px solid #b99292;
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: .8;
+    position: absolute;
+    top: -50px;
+    -webkit-transform: rotate(35deg);
+            transform: rotate(35deg);
+    width: 50px;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
+    z-index: 1;
+  }
+  .effect01:hover:after {
+    background: #d1bcbc;
+    border: 20px solid #ffffff;
+    opacity: 0;
+    left: 120%;
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
